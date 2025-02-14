@@ -7,11 +7,36 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicBean"
+<!--    we import data in musicPlayer.properties-->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="classicalMusic"
+          class="kg.surkeev.spring_course.ClassicalMusic">
+    </bean>
+    <bean id="kyrgyzMusic"
           class="kg.surkeev.spring_course.KyrgyzMusic">
     </bean>
+    <bean id="rockMusic"
+          class="kg.surkeev.spring_course.RockMusic">
+    </bean>
+
     <bean id="musicPlayer" class="kg.surkeev.spring_course.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+
+<!--        when implementation dependency injection with constructor
+            <constructor-arg ref="musicBean"/>-->
+
+<!--        when implementation dependency injection with setter method-->
+        <property name="musicList">
+            <list>
+                <ref bean="rockMusic"/>
+                <ref bean="kyrgyzMusic"/>
+                <ref bean="classicalMusic"/>
+            </list>
+        </property>
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+
     </bean>
 
 </beans>
