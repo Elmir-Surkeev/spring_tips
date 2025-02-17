@@ -10,6 +10,23 @@ public class TestSpring {
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer second_musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        //we use method comparison with boolean value, because we need to check bean by link (Object)
+        boolean comparison = musicPlayer == second_musicPlayer;
+        System.out.println(comparison);
+
+        //Also we can check with hash code (when we use toString default value)
+        System.out.println(musicPlayer);
+        System.out.println(second_musicPlayer);
+
+        ///////////////Check change value by link, when our scope = singleton
+
+        //Before we changed default value singleton to prototype/
+        musicPlayer.setVolume(23);
+        System.out.println(musicPlayer.getVolume());
+        System.out.println(second_musicPlayer.getVolume());
+
         musicPlayer.playMusic();
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());

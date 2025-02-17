@@ -20,7 +20,8 @@
           class="kg.surkeev.spring_course.RockMusic">
     </bean>
 
-    <bean id="musicPlayer" class="kg.surkeev.spring_course.MusicPlayer">
+    <bean id="musicPlayer" class="kg.surkeev.spring_course.MusicPlayer"
+          scope="prototype">
 
 <!--        when implementation dependency injection with constructor
             <constructor-arg ref="musicBean"/>-->
@@ -36,7 +37,6 @@
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-
     </bean>
 
 </beans>
