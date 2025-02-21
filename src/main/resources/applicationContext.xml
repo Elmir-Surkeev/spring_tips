@@ -10,43 +10,4 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <context:component-scan base-package="kg.surkeev.spring_course"/>
-<!--    <bean id="musicBean" class="kg.surkeev.spring_course.ClassicalMusic"-->
-<!--          init-method="doMyInit" destroy-method="doMyDestroy"-->
-<!--          factory-method="getClassicalMusic"-->
-<!--    />-->
-
-<!--    <bean id="musicTaskBean" class="kg.surkeev.spring_course.KyrgyzMusic" scope="prototype"-->
-<!--          init-method="doMyInit" destroy-method="doMyDestroy"/>-->
-
-<!--          when we use scope="prototype" we can't use destroy method-->
-
-
-<!--    <bean id="classicalMusic"-->
-<!--          class="kg.surkeev.spring_course.ClassicalMusic">-->
-<!--    </bean>-->
-<!--    <bean id="kyrgyzMusic"-->
-<!--          class="kg.surkeev.spring_course.KyrgyzMusic">-->
-<!--    </bean>-->
-<!--    <bean id="rockMusic"-->
-<!--          class="kg.surkeev.spring_course.RockMusic">-->
-<!--    </bean>-->
-
-<!--    <bean id="musicPlayer" class="kg.surkeev.spring_course.MusicPlayer"-->
-<!--          scope="prototype">-->
-<!--&lt;!&ndash;        when implementation dependency injection with constructor-->
-<!--            <constructor-arg ref="musicBean"/>&ndash;&gt;-->
-
-<!--&lt;!&ndash;        when implementation dependency injection with setter method&ndash;&gt;-->
-<!--        <property name="musicList">-->
-<!--            <list>-->
-<!--                <ref bean="rockMusic"/>-->
-<!--                <ref bean="kyrgyzMusic"/>-->
-<!--                <ref bean="classicalMusic"/>-->
-<!--            </list>-->
-<!--        </property>-->
-
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
-
 </beans>
