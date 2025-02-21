@@ -1,5 +1,8 @@
 package kg.surkeev.spring_course;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music{
     //if we use private constructor method we can't create new Object class
     private ClassicalMusic classicalMusic;
