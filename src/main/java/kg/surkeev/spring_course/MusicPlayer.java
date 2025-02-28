@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 //С архитектурой inversion of control
 //IoC
 
-@Component
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
@@ -23,7 +22,6 @@ public class MusicPlayer {
     public int getVolume() {
         return volume;
     }
-    @Autowired
     public MusicPlayer(@Qualifier("classicalMusic") Music music1, @Qualifier("rockMusic") Music music2){
         this.music1 = music1;
         this.music2 = music2;
